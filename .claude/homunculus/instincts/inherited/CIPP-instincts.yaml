@@ -1,0 +1,554 @@
+# Instincts generated from https://github.com/kphillipsjr1101/CIPP
+# Generated: 2026-04-24T15:14:00.037Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: CIPP-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP
+---
+
+# CIPP Commit Length
+
+## Action
+
+Keep commit messages concise (~40 characters)
+
+## Evidence
+
+- Average commit message length: 40 chars
+- Based on 100 commits
+
+---
+id: CIPP-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP
+---
+
+# CIPP Naming Files
+
+## Action
+
+Use PascalCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: PascalCase
+
+---
+id: CIPP-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP
+---
+
+# CIPP Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: CIPP-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP
+---
+
+# CIPP Export Style
+
+## Action
+
+Prefer default exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: default
+
+---
+id: CIPP-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP
+---
+
+# CIPP Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: api, components, data, pages, layouts
+
+---
+id: CIPP-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP
+---
+
+# CIPP Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: CIPP-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP
+---
+
+# CIPP Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: CIPP-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP
+---
+
+# CIPP Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~10x per month
+- Files: src/components/cippcomponents/*, src/components/cippstandards/*, src/components/cipptable/*
+
+---
+id: CIPP-workflow-add-or-update-standard
+trigger: "when doing add or update standard"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP
+---
+
+# CIPP Workflow Add Or Update Standard
+
+## Action
+
+Follow the add-or-update-standard workflow:
+1. Edit src/data/standards.json to add or update the standard.
+2. Optionally update or create related documentation or PowerShell command references.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: src/data/standards.json
+
+---
+id: CIPP-workflow-add-or-update-alert
+trigger: "when doing add or update alert"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP
+---
+
+# CIPP Workflow Add Or Update Alert
+
+## Action
+
+Follow the add-or-update-alert workflow:
+1. Edit src/data/alerts.json to add or update the alert definition.
+2. Update src/pages/tenant/administration/alert-configuration/alert.jsx to handle new alert logic or UI.
+3. Optionally update cspell.json if new terminology is introduced.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/data/alerts.json, src/pages/tenant/administration/alert-configuration/alert.jsx, cspell.json
+
+---
+id: CIPP-workflow-enhance-exchange-user-page
+trigger: "when doing enhance exchange user page"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP
+---
+
+# CIPP Workflow Enhance Exchange User Page
+
+## Action
+
+Follow the enhance-exchange-user-page workflow:
+1. Edit src/pages/identity/administration/users/user/exchange.jsx to implement or update feature.
+2. If new dialogs/components are needed, create or update files in src/components/CippComponents/ (e.g., CippAliasDialog.jsx, CippMailboxPermissionsDialog.jsx).
+3. Optionally update src/components/CippFormPages/CippExchangeSettingsForm.jsx for form logic.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: src/pages/identity/administration/users/user/exchange.jsx, src/components/CippComponents/CippAliasDialog.jsx, src/components/CippComponents/CippMailboxPermissionsDialog.jsx
+
+---
+id: CIPP-workflow-add-or-update-component-with-related-usage
+trigger: "when doing add or update component with related usage"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP
+---
+
+# CIPP Workflow Add Or Update Component With Related Usage
+
+## Action
+
+Follow the add-or-update-component-with-related-usage workflow:
+1. Create new component file in src/components/ (e.g., CippDocsLookup.jsx, CippApiDialog.jsx).
+2. Edit one or more files to use the new component (e.g., CippApiResults.jsx, exchange.jsx).
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/components/CippComponents/CippDocsLookup.jsx, src/components/CippComponents/CippApiResults.jsx, src/components/CippComponents/CippApiDialog.jsx
+
+---
+id: cipp-instinct-file-naming-pascalcase
+trigger: "When creating a new file (component, class, etc.)"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP
+---
+
+# Cipp Instinct File Naming Pascalcase
+
+## Action
+
+Name the file using PascalCase (e.g., CippAliasDialog.jsx)
+
+## Evidence
+
+- Pattern in files src/components/CippComponents/CippAliasDialog.jsx
+- src/components/CippComponents/CippMailboxPermissionsDialog.jsx
+
+---
+id: cipp-instinct-function-naming-camelcase
+trigger: "When defining a new function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP
+---
+
+# Cipp Instinct Function Naming Camelcase
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in codebase: function names in camelCase in src/components/
+
+---
+id: cipp-instinct-class-naming-pascalcase
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP
+---
+
+# Cipp Instinct Class Naming Pascalcase
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in codebase: class names in PascalCase in src/components/
+
+---
+id: cipp-instinct-constant-naming-screaming-snake-case
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP
+---
+
+# Cipp Instinct Constant Naming Screaming Snake Case
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in codebase: constants in SCREAMING_SNAKE_CASE in src/components/
+
+---
+id: cipp-instinct-import-style-relative
+trigger: "When importing modules within the project"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP
+---
+
+# Cipp Instinct Import Style Relative
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in codebase: import statements use relative paths in src/components/
+
+---
+id: cipp-instinct-export-style-default
+trigger: "When exporting a module or component"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP
+---
+
+# Cipp Instinct Export Style Default
+
+## Action
+
+Use default export style
+
+## Evidence
+
+- Pattern in codebase: export default in src/components/
+
+---
+id: cipp-instinct-test-file-pattern
+trigger: "When creating a test file"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP
+---
+
+# Cipp Instinct Test File Pattern
+
+## Action
+
+Name the test file with the pattern *.test.ts
+
+## Evidence
+
+- Pattern in test files: *.test.ts
+
+---
+id: cipp-instinct-test-type-unit
+trigger: "When writing tests"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP
+---
+
+# Cipp Instinct Test Type Unit
+
+## Action
+
+Write unit tests for new features or components
+
+## Evidence
+
+- Testing pattern: testTypes includes 'unit'
+
+---
+id: cipp-instinct-commit-prefix-feat
+trigger: "When committing a new feature"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP
+---
+
+# Cipp Instinct Commit Prefix Feat
+
+## Action
+
+Prefix the commit message with 'Feat:'
+
+## Evidence
+
+- Seen in commit: 'Feat: add TERRL alert for monitoring Tenant'
+
+---
+id: cipp-instinct-commit-prefix-fix
+trigger: "When committing a bug fix"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP
+---
+
+# Cipp Instinct Commit Prefix Fix
+
+## Action
+
+Prefix the commit message with 'Fix:'
+
+## Evidence
+
+- Seen in commit: 'Fix: add queryKey for both device pages to fix loading bug when switching directly between them'
+
+---
+id: cipp-instinct-commit-length-average
+trigger: "When writing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP
+---
+
+# Cipp Instinct Commit Length Average
+
+## Action
+
+Keep the commit message concise (average ~40 characters)
+
+## Evidence
+
+- Pattern in commit messages: averageLength 40
+
+---
+id: cipp-instinct-add-or-update-standard
+trigger: "When someone wants to introduce or modify a standard (e.g., mailbox limits, guest access, resource mailbox behavior)"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP
+---
+
+# Cipp Instinct Add Or Update Standard
+
+## Action
+
+Edit src/data/standards.json to add or update the standard; optionally update or create related documentation or PowerShell command references
+
+## Evidence
+
+- Workflow: add-or-update-standard
+- Seen in commits: 'Add Mailbox Recipient Limits standard to standards.json'
+
+---
+id: cipp-instinct-add-or-update-alert
+trigger: "When someone wants to introduce or update an alert (e.g., TERRL alert for recipient rate limits)"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP
+---
+
+# Cipp Instinct Add Or Update Alert
+
+## Action
+
+Edit src/data/alerts.json to add or update the alert definition; update src/pages/tenant/administration/alert-configuration/alert.jsx to handle new alert logic or UI; optionally update cspell.json if new terminology is introduced
+
+## Evidence
+
+- Workflow: add-or-update-alert
+- Seen in commits: 'Feat: add TERRL alert for monitoring Tenant'
+
+---
+id: cipp-instinct-enhance-exchange-user-page
+trigger: "When someone wants to add, improve, or fix Exchange mailbox/user management features"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP
+---
+
+# Cipp Instinct Enhance Exchange User Page
+
+## Action
+
+Edit src/pages/identity/administration/users/user/exchange.jsx to implement or update feature; if new dialogs/components are needed, create or update files in src/components/CippComponents/; optionally update src/components/CippFormPages/CippExchangeSettingsForm.jsx for form logic
+
+## Evidence
+
+- Workflow: enhance-exchange-user-page
+- Pattern in files: src/pages/identity/administration/users/user/exchange.jsx, src/components/CippComponents/CippAliasDialog.jsx
+
+---
+id: cipp-instinct-add-or-update-component-with-related-usage
+trigger: "When someone wants to introduce a new UI component and immediately use it in the app"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP
+---
+
+# Cipp Instinct Add Or Update Component With Related Usage
+
+## Action
+
+Create new component file in src/components/ (e.g., CippDocsLookup.jsx, CippApiDialog.jsx); edit one or more files to use the new component (e.g., CippApiResults.jsx, exchange.jsx)
+
+## Evidence
+
+- Workflow: add-or-update-component-with-related-usage
+- Pattern in files: src/components/CippComponents/CippDocsLookup.jsx, src/components/CippComponents/CippApiResults.jsx
+
