@@ -1,0 +1,35 @@
+---
+name: add-or-update-alert
+description: Workflow command scaffold for add-or-update-alert in CIPP.
+allowed_tools: ["Bash", "Read", "Write", "Grep", "Glob"]
+---
+
+# /add-or-update-alert
+
+Use this workflow when working on **add-or-update-alert** in `CIPP`.
+
+## Goal
+
+Adds or modifies an alert for tenant monitoring and configuration.
+
+## Common Files
+
+- `src/data/alerts.json`
+- `src/pages/tenant/administration/alert-configuration/alert.jsx`
+
+## Suggested Sequence
+
+1. Understand the current state and failure mode before editing.
+2. Make the smallest coherent change that satisfies the workflow goal.
+3. Run the most relevant verification for touched files.
+4. Summarize what changed and what still needs review.
+
+## Typical Commit Signals
+
+- Edit src/data/alerts.json to add or update the alert.
+- Update src/pages/tenant/administration/alert-configuration/alert.jsx to implement or reflect the alert in the UI.
+
+## Notes
+
+- Treat this as a scaffold, not a hard-coded script.
+- Update the command if the workflow evolves materially.
