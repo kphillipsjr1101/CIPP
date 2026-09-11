@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Alert, Stack } from "@mui/material";
 import { Grid } from "@mui/system";
 import CippWizardStepButtons from "./CippWizardStepButtons";
 import CippFormComponent from "../CippComponents/CippFormComponent";
@@ -8,8 +8,12 @@ export const CippWizardAutopilotOptions = (props) => {
   return (
     <Stack spacing={3}>
       <>
+        <Alert severity="warning">
+          If a Group Tag was provided in the imported device data, it will take precedence over any
+          Group Tag specified here.
+        </Alert>
         <Grid container spacing={3}>
-          <Grid item size={{ md: 12, xs: 12 }}>
+          <Grid size={{ md: 12, xs: 12 }}>
             <CippFormComponent
               type="textField"
               label="Group Name (Leave blank to automatically generate)"
